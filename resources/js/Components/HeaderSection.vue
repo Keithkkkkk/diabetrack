@@ -2,12 +2,6 @@
     <header class="header">
       <img src="/images/logo2.png" alt="Logo" class="logo" />
       <nav class="nav">
-        <!-- <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Doctors</a>
-        <a href="#">Blog</a>
-        <a href="#">Contact</a> -->
-        
       </nav>
      <!-- <div>
       <button class="appointment-btn">Appointment</button>

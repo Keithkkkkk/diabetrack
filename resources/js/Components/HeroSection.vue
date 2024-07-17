@@ -1,9 +1,9 @@
 <template>
     <section class="hero">
       <div class="text-content">
-        <h1>DIABETRACK</h1>
+        <h1  class="text-3xl font-bold text-center text-blue-600 dark:text-blue-400 mb-4">DIABETRACK</h1>
         <p>Empower Your Health Journey: Track, Connect, Thrive with DiabeTrack!</p>
-        <button class="find-doctors-btn">TRY IT OUT</button>
+        <!--<button class="find-doctors-btn">TRY IT OUT</button>-->
       </div>
       <div class="image-content">
         <img src="/images/image1.jpeg" alt="Image" />
