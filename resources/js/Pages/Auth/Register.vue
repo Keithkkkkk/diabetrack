@@ -50,6 +50,7 @@ const submit = () => {
         onFinish: () => form.reset('password', 'password_confirmation'),
     });
 };
+
 const isPasswordValid = computed(() => {
     return (
         passwordValidations.value.minLength &&
@@ -61,18 +62,20 @@ const isPasswordValid = computed(() => {
 });
 
 const showPassword = ref(false);
-
-const togglePasswordVisibility = () => {
-    showPassword.value = !showPassword.value;
-};
 const showPasswordConfirmation = ref(false);
 
-const togglePasswordConfirmationVisibility = () => {
+const togglePasswordVisibility = (event) => {
+    event.preventDefault();
+    showPassword.value = !showPassword.value;
+};
+
+const togglePasswordConfirmationVisibility = (event) => {
+    event.preventDefault();
     showPasswordConfirmation.value = !showPasswordConfirmation.value;
 };
 
-
 </script>
+
 
 <template>
     <Head title="Register" />

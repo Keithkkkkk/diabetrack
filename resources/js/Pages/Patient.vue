@@ -391,9 +391,6 @@ const navLinks= [
     <AppLayout>
       <div id="app">
       <div class="layout">
-        <!-- Left SideNav -->
-        <SideNav :links="navLinks" />
-
         <!-- Main Content -->
         <main class="main-content" :class="{ 'blur': isLocked }">
           <!-- HeroSection2 should be placed here if it's part of the main content -->

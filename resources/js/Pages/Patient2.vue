@@ -150,6 +150,7 @@ function showItem2(){
         
         <HeroSection2/>
         <div class="py-4 container-fluid">
+            <div class="tablu">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Food Log
             </h2>
@@ -169,6 +170,7 @@ function showItem2(){
                 <button type="button" @click="showItem2">Add Dinner Meal</button>
                 <div v-if="myVariable2==true" id="app">
                 <MealForm mealType="Dinner" @meal-added="addMeal" />
+                </div>
                 </div>
             </div>   
             <div class="col-lg-7">
@@ -371,5 +373,9 @@ form {
         padding-right: 15px;
         padding-left: 15px;
     }
+    .tablu {
+    padding-bottom: 2rem;
+    padding-right: 40rem;
+}
 </style>
 

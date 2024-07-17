@@ -1,5 +1,6 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
+import { Inertia } from '@inertiajs/inertia';
 import HeaderSection from '/resources/js/Components/HeaderSection.vue';
 import HeroSection from '/resources/js/Components/HeroSection.vue';
 import ServicesSection from '/resources/js/Components/ServicesSection.vue';
@@ -32,15 +33,22 @@ function handleImageError() {
     document.getElementById('background')?.classList.add('!hidden');
 }
 
-
+function logout() {
+    Inertia.post(route('logout'));
+}
 </script>
 
 <template>
     <div>
         <div class="bg-blue-300 text-black/50 dark:text-black/50" style="background-color:#f0f8ff">
             <nav v-if="canLogin" class="flex-container">
-                    <Link v-if="$page.props.auth.user"
-                    </Link>
+                <button
+                    v-if="$page.props.auth.user"
+                    @click="logout"
+                    class="flex-item bg-blue-500 text-white rounded-md px-4 py-2 transition hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-700"
+                >
+                    Log Out
+                </button>
                 <template v-else>
                     <Link
                         :href="route('login')"
@@ -128,69 +136,5 @@ function handleImageError() {
 </style>
 
      
-    <!--
-    <Head title="Welcome" />
-    
-    <div class="bg-blue-300 text-black/50 dark:text-black/50" style="background-color:#f0f8ff">
-
-        <!-- <img src="images/telemedlogo.jpg" width="70"  style="border-radius: 50%;" />
-        <h3>DIABETRACK</h3>
-        <div id="app">
-
-        <div class="relative min-h-screen flex flex-col  selection:bg-[#FF2D20] selection:text-white">
-            <!-- <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl"> 
-                    <!-- <div class="flex lg:justify-center lg:col-start-2"> 
-                    <!-- </div> 
-                    <nav v-if="canLogin" class="-mx-3 flex flex-1 justify-end">
-                        <Link
-                            v-if="$page.props.auth.user"
-                            :href="route('dashboard')"
-                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-black dark:hover:text-black/80 dark:focus-visible:ring-black"
-                        >
-                            Dashboard
-                        </Link>
-
-                        <template v-else>
-                            <Link
-                                :href="route('login')"
-                                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-black dark:hover:text-black/80 dark:focus-visible:ring-black"
-                                >
-                                Log in
-                            </Link>
-
-                            <Link
-                                v-if="canRegister"
-                                :href="route('register')"
-                                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-black dark:hover:text-black/80 dark:focus-visible:ring-black"
-                                >
-                                Register
-                            </Link>
-                        </template>
-                    </nav>
- 
-<div>
-    <HeroSection />
-</div>
-<div>
-       <ServicesSection />
-    </div>
-<!-- 
-    <div>
-    <SpecialitySection />
-</div>
-<div>
-    <AppointmentSection />
-    </div>
-    <div>
-    <DoctorsSection />
-    </div> 
-    
-  </div>
-
-                <!-- <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                    Laravel v{{ date('Y') }} (PHP v{{ phpVersion }})
-                </footer> 
-            </div>
-        </div>
-    <!-- </div> -->
+   
 
