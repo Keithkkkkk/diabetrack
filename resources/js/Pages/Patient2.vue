@@ -154,19 +154,19 @@ function showItem2(){
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Food Log
             </h2>
-            <div>
+            <div class=" new">
                 <button type="button" @click="showItem">Add Breakfast Meal</button>
                 <div v-if="myVariable==true" id="app">
                 <MealForm mealType="Breakfast" @meal-added="addMeal" />
                 </div>
             </div>
-            <div>
+            <div class="new">
                 <button type="button" @click="showItem1">Add Lunch Meal</button>
                 <div v-if="myVariable1==true" id="app">
                 <MealForm mealType="Lunch" @meal-added="addMeal" />
                 </div>
             </div>
-            <div>
+            <div class="new">
                 <button type="button" @click="showItem2">Add Dinner Meal</button>
                 <div v-if="myVariable2==true" id="app">
                 <MealForm mealType="Dinner" @meal-added="addMeal" />
@@ -277,6 +277,9 @@ function showItem2(){
     margin: 10px;
 
 }
+.new{
+    padding-bottom: 3px;
+}
 .card {
     box-shadow: 0 20px 27px 0 rgba(0, 0, 0, 0.05);
 }
@@ -365,6 +368,15 @@ function showItem2(){
     font-family: muli-bold;
     background: 0 0;
 }
+button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding-bottom: 5px;
+  }
 .form-group {
     display: flex;
 }
