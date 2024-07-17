@@ -209,6 +209,7 @@ async function submitmedicationForm() {
                 Frequency: '',
                 StartDate: '',    
             }     
+            window.location.reload();
             
         } else {
             alert('Submission failed. Please try again.');
@@ -302,12 +303,12 @@ onMounted(fetchGlucoseReadings);
       
                             <div class="mb-4">
                                 <label for="Type" class="block text-gray-700">Type:</label>
-                                <input id="Type" type="text" class="form-control mt-1 block w-full" v-model="medicationsForm.Type" />
+                                <input id="Type" type="text" placeholder="(e.g oral,injection))" class="form-control mt-1 block w-full" v-model="medicationsForm.Type" />
                             </div>
       
                             <div class="mb-4">
                                 <label for="Dosage" class="block text-gray-700">Dosage:</label>
-                                <input id="Dosage" type="text" class="form-control mt-1 block w-full" v-model="medicationsForm.Dosage" />
+                                <input id="Dosage" type="text" placeholder="(g or ml)" class="form-control mt-1 block w-full" v-model="medicationsForm.Dosage" />
                             </div>
       
                             <div class="mb-4">
