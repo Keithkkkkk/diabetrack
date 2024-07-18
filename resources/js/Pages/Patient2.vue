@@ -154,19 +154,19 @@ function showItem2(){
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Food Log
             </h2>
-            <div>
+            <div class="news">
                 <button type="button" @click="showItem">Add Breakfast Meal</button>
                 <div v-if="myVariable==true" id="app">
                 <MealForm mealType="Breakfast" @meal-added="addMeal" />
                 </div>
             </div>
-            <div>
+            <div class="news">
                 <button type="button" @click="showItem1">Add Lunch Meal</button>
                 <div v-if="myVariable1==true" id="app">
                 <MealForm mealType="Lunch" @meal-added="addMeal" />
                 </div>
             </div>
-            <div>
+            <div class="news">
                 <button type="button" @click="showItem2">Add Dinner Meal</button>
                 <div v-if="myVariable2==true" id="app">
                 <MealForm mealType="Dinner" @meal-added="addMeal" />
@@ -266,6 +266,17 @@ function showItem2(){
 -->
 
 <style scoped>
+button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+.news{
+    padding-bottom: 5px;
+}
 .blur {
     filter: blur(4px);
 }
